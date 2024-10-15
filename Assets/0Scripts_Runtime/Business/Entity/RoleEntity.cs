@@ -11,7 +11,7 @@ public class RoleEntity : MonoBehaviour
 
     [SerializeField] GameObject rightController;
 
-
+    public RoleState roleState;
 
     public float moveSpeed;
 
@@ -20,6 +20,7 @@ public class RoleEntity : MonoBehaviour
     public void Ctor()
     {
         moveSpeed = 5.5f;
+        roleState = RoleState.Idle;
 
     }
 

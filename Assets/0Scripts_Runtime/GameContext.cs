@@ -33,14 +33,14 @@ public class GameContext {
 
     }
 
-    public RoleEntity Role_GetOwner() {
-        bool has = roleRepository.TryGet(gameEntity.ownerID, out RoleEntity entity);
-        if (!has) {
-            Debug.LogError("GameContext.Role_GetOwner: ownerID not found");
-            return null;
-        }
-        return entity;
-    }
+    // public RoleEntity Role_GetOwner() {
+    //     bool has = roleRepository.TryGet(gameEntity.ownerID, out RoleEntity entity);
+    //     if (!has) {
+    //         Debug.LogError("GameContext.Role_GetOwner: ownerID not found");
+    //         return null;
+    //     }
+    //     return entity;
+    // }
 
     public PlaneEntity Plane_GetOwner() {
         bool has = planeRepository.TryGet(gameEntity.ownerID, out PlaneEntity entity);

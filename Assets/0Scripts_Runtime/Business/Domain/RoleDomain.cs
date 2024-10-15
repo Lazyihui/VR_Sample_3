@@ -49,7 +49,7 @@ public static class RoleDomain {
 
         Debug.Log("RoleDomain.RoleToPlanePos: distance=" + distance);
 
-        if (distance < 65) {
+        if (distance < 4) {
             ctx.gameEntity.isDistanceOK = true;
         }
 
