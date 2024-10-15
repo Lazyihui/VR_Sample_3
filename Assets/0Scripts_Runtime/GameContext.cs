@@ -11,6 +11,8 @@ public class GameContext {
 
     public UIContext uiContext;
 
+    public InputContext inputContext;
+
     // rops
     public RoleRepository roleRepository;
     public GameContext() {
@@ -19,6 +21,7 @@ public class GameContext {
         // ctx
         assetsContext = new AssetsContext();
         uiContext = new UIContext();
+        inputContext = new InputContext();
         // repo
         roleRepository = new RoleRepository();
     }

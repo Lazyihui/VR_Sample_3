@@ -27,7 +27,7 @@ public class Main : MonoBehaviour {
         uiContext.uiEvent.OnStartButtonClicked = () => {
 
             AppUI.Panel_Login_Close(ctx);
-            ctx.gameEntity.gameState = GameState.Game;
+            // ctx.gameEntity.gameState = GameState.Game;
             Game_Business.Enter(ctx);
 
         };
