@@ -12,14 +12,37 @@ public class Main : MonoBehaviour {
 
         ctx.Inject();
 
-
         AssetsCore.Load(ctx.assetsContext);
 
-            
+        Login_Business.Enter(ctx);
+
+        Binding();
+    }
+
+
+    void Binding() {
+        var uiContext = ctx.uiContext;
+
+
+        uiContext.uiEvent.OnStartButtonClicked = () => {
+
+            AppUI.Panel_Login_Close(ctx);
+            ctx.gameEntity.gameState = GameState.Game;
+            Game_Business.Enter(ctx);
+
+        };
+
+
     }
 
     void Update() {
+        float dt = Time.deltaTime;
 
+        if (ctx.gameEntity.gameState == GameState.Login) {
+            Login_Business.Tick(ctx, dt);
+        } else if (ctx.gameEntity.gameState == GameState.Game) {
+            Game_Business.Tick(ctx, dt);
+        }
     }
 
 

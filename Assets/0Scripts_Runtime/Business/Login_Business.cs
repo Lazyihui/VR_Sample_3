@@ -13,10 +13,26 @@ public static class Login_Business {
 
     static void PreTick(GameContext ctx, float dt) {
 
+        // 有点小问题先不管
+        ctx.gameEntity.LoginTime += dt;
+        if (ctx.gameEntity.LoginTime > 3) {
+            ctx.gameEntity.isLoginOpen = true;
+        }
+
+        if (ctx.gameEntity.isLoginOpen) {
+            AppUI.Panel_Login_Open(ctx);
+            ctx.gameEntity.isLoginOpen = false;
+        }
+        // 
+
+
+
     }
 
     public static void Tick(GameContext ctx, float dt) {
+        PreTick(ctx, dt);
 
+        
     }
 
     static void LateTick(GameContext ctx, float dt) {

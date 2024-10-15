@@ -6,7 +6,7 @@ public static class Game_Business {
 
 
     public static void Enter(GameContext ctx) {
-
+        Debug.Log("Game_Business.Enter");
     }
 
 

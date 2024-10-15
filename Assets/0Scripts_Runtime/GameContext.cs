@@ -9,12 +9,16 @@ public class GameContext {
     // ctx
     public AssetsContext assetsContext;
 
+    public UIContext uiContext;
+
     // rops
     public RoleRepository roleRepository;
     public GameContext() {
+        gameEntity = new GameEntity();
+
         // ctx
         assetsContext = new AssetsContext();
-
+        uiContext = new UIContext();
         // repo
         roleRepository = new RoleRepository();
     }

@@ -44,4 +44,12 @@ public class Panel_Login : MonoBehaviour {
         }
 
     }
+
+    public void Show() {
+        gameObject.SetActive(true);
+    }
+
+    public void TearDown(){
+        Destroy(gameObject);
+    }
 }
