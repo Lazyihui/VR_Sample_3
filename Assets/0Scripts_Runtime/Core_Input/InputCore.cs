@@ -13,9 +13,20 @@ public static class InputCore {
         {
             Vector2 moveAxis = ctx.inputContext.inputActions.XRILeftHandLocomotion.Move.ReadValue<Vector2>();
             ctx.inputContext.leftHand.moveAxis = moveAxis;
-            Debug.Log("InputCore.Tick: leftHand moveAxis=" + moveAxis);
 
         }
+        // 按下A键
+        {
+            float a = ctx.inputContext.inputActions.XRILeftHandInteraction.PressA.ReadValue<float>();
+            if (a > 0.5f) {
+                ctx.inputContext.leftHand.isPressA = true;
+            }else{
+                ctx.inputContext.leftHand.isPressA = false;
+
+            }
+        }
+
+
 
     }
 

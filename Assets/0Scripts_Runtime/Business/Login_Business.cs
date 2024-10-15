@@ -6,7 +6,11 @@ public static class Login_Business {
 
 
     public static void Enter(GameContext ctx) {
-        RoleDomain.Spawan(ctx);
+        RoleEntity role = RoleDomain.Spawan(ctx);
+        role.id = ctx.gameEntity.ownerID;
+
+        PlaneEntity plane = PlaneDomain.Spawan(ctx);
+        plane.id = ctx.gameEntity.ownerID;
 
     }
 
@@ -21,6 +25,22 @@ public static class Login_Business {
                 ctx.gameEntity.isLoginOpen = true;
                 AppUI.Panel_Login_Open(ctx);
             }
+        }
+
+        if (ctx.gameEntity.isDistanceOK) {
+            if (ctx.gameEntity.isPressAOpen == false) {
+                ctx.gameEntity.isPressAOpen = true;
+                AppUI.Panel_A_Open(ctx);
+            }
+        }
+
+        if (ctx.inputContext.leftHand.isPressA) {
+
+            AppUI.Panel_A_Close(ctx);
+            ctx.gameEntity.gameState = GameState.Game;
+            RoleDomain.Clear(ctx, ctx.Role_GetOwner());
+
+
         }
 
     }
@@ -55,7 +75,7 @@ public static class Login_Business {
 
 
         RoleDomain.Move(role, moveAxis, dt);
-        RoleDomain.RoleToPlanePos(role);
+        RoleDomain.RoleToPlanePos(ctx, role, ctx.Plane_GetOwner());
 
     }
 

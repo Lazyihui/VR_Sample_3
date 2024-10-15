@@ -40,8 +40,10 @@ public class Main : MonoBehaviour {
 
         if (ctx.gameEntity.gameState == GameState.Login) {
             Login_Business.Tick(ctx, dt);
+
         } else if (ctx.gameEntity.gameState == GameState.Game) {
             Game_Business.Tick(ctx, dt);
+
         }
     }
 

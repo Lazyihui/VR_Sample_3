@@ -7,9 +7,11 @@ public class InputEntity {
 
     public Vector2 moveAxis;
 
+    public bool isPressA;
 
     public InputEntity() {
         moveAxis = Vector2.zero;
+        isPressA = false;
     }
 
 

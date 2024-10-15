@@ -11,7 +11,6 @@ public class RoleEntity : MonoBehaviour
 
     [SerializeField] GameObject rightController;
 
-    [SerializeField] public Vector3 planePos;
 
 
     public float moveSpeed;
@@ -21,6 +20,7 @@ public class RoleEntity : MonoBehaviour
     public void Ctor()
     {
         moveSpeed = 5.5f;
+
     }
 
     public void SetPos()

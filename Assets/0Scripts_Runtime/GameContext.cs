@@ -15,6 +15,8 @@ public class GameContext {
 
     // rops
     public RoleRepository roleRepository;
+
+    public PlaneRepository planeRepository;
     public GameContext() {
         gameEntity = new GameEntity();
 
@@ -24,6 +26,7 @@ public class GameContext {
         inputContext = new InputContext();
         // repo
         roleRepository = new RoleRepository();
+        planeRepository = new PlaneRepository();
     }
 
     public void Inject() {
@@ -34,6 +37,15 @@ public class GameContext {
         bool has = roleRepository.TryGet(gameEntity.ownerID, out RoleEntity entity);
         if (!has) {
             Debug.LogError("GameContext.Role_GetOwner: ownerID not found");
+            return null;
+        }
+        return entity;
+    }
+
+    public PlaneEntity Plane_GetOwner() {
+        bool has = planeRepository.TryGet(gameEntity.ownerID, out PlaneEntity entity);
+        if (!has) {
+            Debug.LogError("GameContext.Plane_GetOwner: ownerID not found");
             return null;
         }
         return entity;

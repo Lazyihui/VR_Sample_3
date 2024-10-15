@@ -40,17 +40,25 @@ public static class RoleDomain {
 
     }
 
-    public static void RoleToPlanePos(RoleEntity role) {
+    public static void RoleToPlanePos(GameContext ctx, RoleEntity role, PlaneEntity plane) {
 
         Vector3 pos = role.transform.position;
-        Vector3 planePos = role.planePos;
+        Vector3 planePos = plane.transform.position;
 
         float distance = Vector3.Distance(pos, planePos);
 
+        Debug.Log("RoleDomain.RoleToPlanePos: distance=" + distance);
 
-        if (distance < 70) {
-
+        if (distance < 65) {
+            ctx.gameEntity.isDistanceOK = true;
         }
+
+    }
+
+    public static void Clear(GameContext ctx, RoleEntity entity) {
+
+        ctx.roleRepository.Remove(entity);
+        GameObject.Destroy(entity.gameObject);
 
     }
 
