@@ -14,6 +14,9 @@ public class Main : MonoBehaviour {
 
 
         AssetsCore.Load(ctx.assetsContext);
+
+        RoleDomain.Spawan(ctx);
+        
     }
 
     void Update() {
