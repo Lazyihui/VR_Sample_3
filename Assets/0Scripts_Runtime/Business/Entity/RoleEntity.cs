@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoleEntity : MonoBehaviour
-{
-    
+public class RoleEntity : MonoBehaviour {
+
     [SerializeField] public GameObject head;
 
     [SerializeField] GameObject leftController;
@@ -17,15 +16,20 @@ public class RoleEntity : MonoBehaviour
 
     public int id;
 
-    public void Ctor()
-    {
+    public void Ctor() {
         moveSpeed = 5.5f;
         roleState = RoleState.Idle;
 
     }
 
-    public void SetPos()
-    {
+    public void HideHead() {
+        leftController.SetActive(false);
+        rightController.SetActive(false);
+        this.transform.rotation = Quaternion.LookRotation(new Vector3(0, 0, 0));
+    }
 
+
+    public void SetPos(Vector3 pos) {
+        this.transform.position = pos;
     }
 }

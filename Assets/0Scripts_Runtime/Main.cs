@@ -28,7 +28,7 @@ public class Main : MonoBehaviour {
 
             AppUI.Panel_Login_Close(ctx);
             // ctx.gameEntity.gameState = GameState.Game;
-            Game_Business.Enter(ctx);
+            // Game_Business.Enter(ctx);
 
         };
 

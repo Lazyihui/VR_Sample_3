@@ -69,7 +69,8 @@ public static class Login_Business {
         if (ctx.inputContext.leftHand.isPressA) {
 
             AppUI.Panel_A_Close(ctx);
-            ctx.gameEntity.gameState = GameState.Game;
+            Game_Business.Enter(ctx);
+            // ctx.gameEntity.gameState = GameState.Game;
             // RoleDomain.Clear(ctx, role);
 
         }
