@@ -52,9 +52,9 @@ public static class Game_Business {
         if (x != 0) {
             // 相机旋转 飞机的位置不变但是要旋转
             RoleDomain.Round(role, plane.transform.position, 0.5f, new Vector3(0, x, 0));
-            PlaneDomain.Face(plane, role.transform.forward);
+            // PlaneDomain.Face(plane, role.transform.forward);
         } else {
-            RoleDomain.Stand_Follow(role, plane.transform.position, 0.5f, plane.transform.forward, dt);
+            RoleDomain.Stand_Follow(role, plane.transform.position, 0.5f, role.transform.forward, dt);
 
         }
 
