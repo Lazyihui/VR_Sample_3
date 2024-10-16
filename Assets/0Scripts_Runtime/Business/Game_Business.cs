@@ -40,10 +40,14 @@ public static class Game_Business {
         right = right * moveAxis.x;
         forward = forward * moveAxis.y;
 
-        Vector2 moveDir = right + forward;
+        Vector3 moveDir = right + forward;
         moveAxis.Normalize();
 
-        PlaneDomain.MoveHori(plane, ctx.inputContext.leftHand.moveAxis, dt);
+        moveAxis = new Vector2(moveDir.x, moveDir.z);
+
+        Debug.Log("moveDir:" + moveDir);
+
+        PlaneDomain.MoveHori(plane, moveAxis, dt);
         PlaneDomain.MoveUpDown(plane, ctx.inputContext.rightHand.moveAxis.y, dt);
 
         float rotateSpeed = 30f;
@@ -52,7 +56,7 @@ public static class Game_Business {
         if (x != 0) {
             // 相机旋转 飞机的位置不变但是要旋转
             RoleDomain.Round(role, plane.transform.position, 0.5f, new Vector3(0, x, 0));
-            // PlaneDomain.Face(plane, role.transform.forward);
+            PlaneDomain.Face(plane, role.transform.forward);
         } else {
             RoleDomain.Stand_Follow(role, plane.transform.position, 0.5f, role.transform.forward, dt);
 
