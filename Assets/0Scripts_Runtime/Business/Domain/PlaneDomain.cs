@@ -45,6 +45,10 @@ public static class PlaneDomain {
 
     }
 
+
+    public static void Face(PlaneEntity plane,Vector3 faceDir){
+        plane.transform.rotation = Quaternion.LookRotation(faceDir);
+    }
     public static void MoveUpDown(PlaneEntity plane, float y, float dt) {
             
             Vector3 moveDir = new Vector3(0, y, 0);
