@@ -9,6 +9,8 @@ public class InputEntity {
 
     public bool isPressA;
 
+
+    public bool isPressTrigger;
     public InputEntity() {
         moveAxis = Vector2.zero;
         isPressA = false;

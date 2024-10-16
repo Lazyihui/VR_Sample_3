@@ -1628,9 +1628,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f671cc67b4a13441a141b0256a15ec3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  head: {fileID: 1193881165009307103}
+  head: {fileID: 1476425022479608273}
   leftController: {fileID: 4374326481767456038}
   rightController: {fileID: 6506522020962768896}
+  roleState: 0
+  moveSpeed: 0
   id: 0
 --- !u!1 &8477419619842431607
 GameObject:

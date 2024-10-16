@@ -43,14 +43,14 @@ public static class PlaneDomain {
     }
 
 
-    public static void Face(PlaneEntity plane,Vector3 faceDir){
+    public static void Face(PlaneEntity plane, Vector3 faceDir) {
         plane.transform.rotation = Quaternion.LookRotation(faceDir);
     }
     public static void MoveUpDown(PlaneEntity plane, float y, float dt) {
-            
-            Vector3 moveDir = new Vector3(0, y, 0);
-            moveDir = moveDir * plane.moveSpeed * dt;
-            plane.transform.position += moveDir;
+
+        Vector3 moveDir = new Vector3(0, y, 0);
+        moveDir = moveDir * plane.moveSpeed * dt;
+        plane.transform.position += moveDir;
     }
 
     public static void Clear(GameContext ctx, PlaneEntity entity) {
@@ -58,6 +58,10 @@ public static class PlaneDomain {
         ctx.planeRepository.Remove(entity);
         GameObject.Destroy(entity.gameObject);
 
+    }
+
+    public static void SetHeadActive(PlaneEntity plane, bool active) {
+        plane.SetHeadActive(active);
     }
 
 }

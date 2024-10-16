@@ -16,8 +16,9 @@ public class Panel_Login : MonoBehaviour {
     public char[] textContent;
 
     public int index;
-    public float time;
+    public int time;
     public void Ctor() {
+        startBtn.gameObject.SetActive(false);
 
 
         startBtn.onClick.AddListener(() => {
@@ -32,8 +33,7 @@ public class Panel_Login : MonoBehaviour {
     }
 
     public void Update() {
-        float dt = Time.deltaTime;
-        time += dt;
+        time++;
         if (time % 3 == 0) {
             if (index < textContent.Length) {
                 txt.text += textContent[index];
@@ -42,8 +42,6 @@ public class Panel_Login : MonoBehaviour {
                 startBtn.gameObject.SetActive(true);
             }
         }
-
-        Debug.Log("time:" + time);
 
     }
 

@@ -40,6 +40,22 @@ public static class InputCore {
                 ctx.inputContext.rightHand.isPressA = false;
             }
         }
+        // 按下trigger键
+        {
+            if (ctx.gameEntity.gameState == GameState.Game) {
+                float trigger = ctx.inputContext.inputActions.XRILeftHandInteraction.Activate.ReadValue<float>();
+                if (trigger > 0.5f) {
+                    PlaneDomain.SetHeadActive(ctx.Plane_GetOwner(), true);
+                } else {
+                }
+
+                float rightTrigger = ctx.inputContext.inputActions.XRIRightHandInteraction.Activate.ReadValue<float>();
+                if (rightTrigger > 0.5f) {
+                    PlaneDomain.SetHeadActive(ctx.Plane_GetOwner(), false);
+                } else {
+                }
+            }
+        }
 
 
 
