@@ -24,11 +24,29 @@ public static class Game_Business {
 
 
     static void PreTick(GameContext ctx, float dt) {
-
+        InputCore.Tick(ctx);
     }
 
     public static void Tick(GameContext ctx, float dt) {
         PreTick(ctx, dt);
+        ctx.roleRepository.TryGet(ctx.gameEntity.ownerID, out RoleEntity role);
+
+        ctx.planeRepository.TryGet(ctx.gameEntity.planeID, out PlaneEntity plane);
+
+        Vector2 moveAxis = ctx.inputContext.leftHand.moveAxis;
+        Vector3 right = role.transform.right;
+        Vector3 forward = role.transform.forward;
+
+        right = right * moveAxis.x;
+        forward = forward * moveAxis.y;
+
+        Vector2 moveDir = right + forward;
+        moveAxis.Normalize();
+
+        Debug.Log(ctx.inputContext.leftHand.moveAxis);
+        PlaneDomain.Move(plane, ctx.inputContext.leftHand.moveAxis, dt);
+
+
 
 
 

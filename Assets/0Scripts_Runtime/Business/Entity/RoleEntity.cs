@@ -25,7 +25,7 @@ public class RoleEntity : MonoBehaviour {
     public void HideHead() {
         leftController.SetActive(false);
         rightController.SetActive(false);
-        this.transform.rotation = Quaternion.LookRotation(new Vector3(0, 0, 0));
+        this.transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 
 
