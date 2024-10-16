@@ -35,8 +35,7 @@ public class PlaneEntity : MonoBehaviour {
 
         bool has = rayInteractor.TryGetCurrent3DRaycastHit(out RaycastHit hit, out int raycastEndpointIndex);
         if (has) {
-
-            Debug.Log(raycastEndpointIndex);
+            Debug.Log(rayInteractor.rayEndPoint);
             Debug.Log("hit:" + hit.point + " " + hit.collider.gameObject.name + hit.transform.name);
         }
 
