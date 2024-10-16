@@ -44,8 +44,19 @@ public static class Game_Business {
         moveAxis.Normalize();
 
         Debug.Log(ctx.inputContext.leftHand.moveAxis);
-        PlaneDomain.Move(plane, ctx.inputContext.leftHand.moveAxis, dt);
+        PlaneDomain.MoveHori(plane, ctx.inputContext.leftHand.moveAxis, dt);
+        PlaneDomain.MoveUpDown(plane, ctx.inputContext.rightHand.moveAxis.y, dt);
 
+        float rotateSpeed = 30f;
+        float x = ctx.inputContext.rightHand.moveAxis.x * rotateSpeed * dt;
+
+        if (x != 0) {
+
+            RoleDomain.Round(role, plane.transform.position, 0.5f, new Vector3(0, x, 0));
+        } else {
+            RoleDomain.Stand_Follow(role, plane.transform.position, 0.5f, plane.transform.forward, dt);
+
+        }
 
 
 

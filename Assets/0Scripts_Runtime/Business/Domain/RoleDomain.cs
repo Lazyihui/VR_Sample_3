@@ -30,9 +30,22 @@ public static class RoleDomain {
 
         role.transform.position = newPos;
 
-
     }
 
+
+    public static void Round(RoleEntity role, Vector3 follow_Target, float distance, Vector3 angleffset) {
+        Vector3 oldPos = role.transform.position;
+        Vector3 dir = oldPos - follow_Target;
+        dir.Normalize();
+
+        Vector3 newDir = Quaternion.Euler(angleffset) * dir;
+        Vector3 newPos = follow_Target + newDir * distance;
+
+        role.transform.position = newPos;
+        role.transform.forward = (follow_Target - newPos).normalized;
+
+
+    }
 
 
     public static void Move(RoleEntity entity, Vector2 moveAxis, float dt) {

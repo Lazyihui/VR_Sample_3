@@ -18,7 +18,7 @@ public static class PlaneDomain {
 
 
         entity.Ctor();
-        
+
 
         ctx.planeRepository.Add(entity);
         return entity;
@@ -27,7 +27,7 @@ public static class PlaneDomain {
 
 
 
-    public static void Move(PlaneEntity entity, Vector2 moveAxis, float dt) {
+    public static void MoveHori(PlaneEntity entity, Vector2 moveAxis, float dt) {
 
 
         Vector3 moveDir = new Vector3(moveAxis.x, 0, moveAxis.y);
@@ -45,7 +45,12 @@ public static class PlaneDomain {
 
     }
 
-
+    public static void MoveUpDown(PlaneEntity plane, float y, float dt) {
+            
+            Vector3 moveDir = new Vector3(0, y, 0);
+            moveDir = moveDir * plane.moveSpeed * dt;
+            plane.transform.position += moveDir;
+    }
 
     public static void Clear(GameContext ctx, PlaneEntity entity) {
 
