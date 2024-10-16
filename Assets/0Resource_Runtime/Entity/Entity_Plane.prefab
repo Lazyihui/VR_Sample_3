@@ -1775,6 +1775,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1097285207216303950}
   - component: {fileID: 6329409035623403889}
+  - component: {fileID: 4500564116432119199}
   m_Layer: 0
   m_Name: Entity_Plane
   m_TagString: Untagged
@@ -1812,6 +1813,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   moveSpeed: 0
+--- !u!65 &4500564116432119199
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5697384881230541860}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.14279556, y: 0.107577175, z: 0.11345291}
+  m_Center: {x: -0.0058689117, y: -0.008806899, z: -0.0000019073486}
 --- !u!1 &5701926197497923064
 GameObject:
   m_ObjectHideFlags: 0

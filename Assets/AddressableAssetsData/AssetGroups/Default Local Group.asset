@@ -41,8 +41,8 @@ MonoBehaviour:
     m_SerializedLabels:
     - Entity
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 5aa4945f65701e64681eed4f361da95b
-    m_Address: CameraEntity
+  - m_GUID: b3febcf5e8b44ef48820a1c573f8a101
+    m_Address: Panel_Patrol
     m_ReadOnly: 0
     m_SerializedLabels:
     - Entity

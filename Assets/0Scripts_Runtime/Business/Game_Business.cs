@@ -43,7 +43,6 @@ public static class Game_Business {
         Vector2 moveDir = right + forward;
         moveAxis.Normalize();
 
-        Debug.Log(ctx.inputContext.leftHand.moveAxis);
         PlaneDomain.MoveHori(plane, ctx.inputContext.leftHand.moveAxis, dt);
         PlaneDomain.MoveUpDown(plane, ctx.inputContext.rightHand.moveAxis.y, dt);
 

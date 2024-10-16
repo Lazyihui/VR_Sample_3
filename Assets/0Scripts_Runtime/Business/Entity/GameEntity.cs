@@ -17,14 +17,20 @@ public class GameEntity {
 
     public bool isDistanceOK;
 
+    public float PatrolTime;
+
+    public bool isPatrolOpen;
+
 
     public GameEntity() {
         ownerID = 0;
         planeID = 0;
         LoginTime = 0;
+        PatrolTime = 0;
         isLoginOpen = false;
         isPressAOpen = false;
         isDistanceOK = false;
+        isPatrolOpen = false;
         gameState = GameState.Login;
 
     }

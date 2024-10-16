@@ -36,12 +36,9 @@ public static class PlaneDomain {
         // if (moveDir != Vector3.zero) {
         //     entity.transform.forward = moveDir;
         // }
-        Debug.Log("moveDir:" + moveDir);
 
         moveDir = moveDir * entity.moveSpeed * dt;
         entity.transform.position += moveDir;
-
-        Debug.Log("entity.transform.position:" + entity.transform.position);
 
     }
 

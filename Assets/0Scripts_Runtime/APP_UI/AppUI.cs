@@ -73,4 +73,36 @@ public static class AppUI {
 
     }
 
+
+    public static void Panel_Patrol_Open(GameContext ctx, string text) {
+        Panel_Patrol panel = ctx.uiContext.panel_Patrol;
+
+        if (panel == null) {
+            bool has = ctx.assetsContext.entities.TryGetValue("Panel_Patrol", out GameObject prefab);
+
+            if (!has) {
+                Debug.LogError("Panel_Patrol_Open: prefab not found");
+                return;
+            }
+
+            GameObject go = GameObject.Instantiate(prefab);
+            panel = go.GetComponent<Panel_Patrol>();
+
+            panel.Ctor();
+            panel.SetText(text);
+        }
+
+        panel.Show();
+        ctx.uiContext.panel_Patrol = panel;
+    }
+
+    public static void Panel_Patrol_Close(GameContext ctx) {
+        Panel_Patrol panel = ctx.uiContext.panel_Patrol;
+        if (panel == null) {
+            return;
+        }
+        panel.TearDown();
+
+    }
+
 }

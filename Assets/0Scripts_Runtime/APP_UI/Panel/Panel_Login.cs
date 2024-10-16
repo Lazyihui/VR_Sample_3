@@ -43,13 +43,15 @@ public class Panel_Login : MonoBehaviour {
             }
         }
 
+        Debug.Log("time:" + time);
+
     }
 
     public void Show() {
         gameObject.SetActive(true);
     }
 
-    public void TearDown(){
+    public void TearDown() {
         Destroy(gameObject);
     }
 }
