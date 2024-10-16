@@ -32,6 +32,13 @@ public static class InputCore {
                 ctx.inputContext.leftHand.isPressA = false;
 
             }
+
+            float rightA = ctx.inputContext.inputActions.XRIRightHandInteraction.PressA.ReadValue<float>();
+            if (rightA > 0.5f) {
+                ctx.inputContext.rightHand.isPressA = true;
+            } else {
+                ctx.inputContext.rightHand.isPressA = false;
+            }
         }
 
 

@@ -58,13 +58,28 @@ public static class Game_Business {
 
         }
 
-
+        LateTick(ctx, dt);
 
 
     }
 
     static void LateTick(GameContext ctx, float dt) {
+        if (ctx.inputContext.rightHand.isPressA) {
 
+            AppUI.Panel_Patrol_Open(ctx, "巡逻完成");
+            ctx.gameEntity.isPatrolOpen = true;
+        }
+
+
+        if (ctx.gameEntity.isPatrolOpen) {
+            ctx.gameEntity.PatrolTime += dt;
+
+            if (ctx.gameEntity.PatrolTime > 3) {
+                AppUI.Panel_Patrol_Close(ctx);
+                ctx.gameEntity.PatrolTime = 0;
+                ctx.gameEntity.isPatrolOpen = false;
+            }
+        }
     }
 
 }

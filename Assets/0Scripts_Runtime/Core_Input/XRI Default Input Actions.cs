@@ -1619,6 +1619,15 @@ public partial class @XRIDefaultInputActions: IInputActionCollection2, IDisposab
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""PressA"",
+                    ""type"": ""Button"",
+                    ""id"": ""dd9e53b7-dfbc-4fc7-adc1-68dd3c467409"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -1784,6 +1793,17 @@ public partial class @XRIDefaultInputActions: IInputActionCollection2, IDisposab
                     ""processors"": ""ScaleVector2(x=0),StickDeadzone"",
                     ""groups"": ""Generic XR Controller"",
                     ""action"": ""Scale Delta"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5770be09-e3f6-45ca-97ce-e3d76cfcb44b"",
+                    ""path"": ""<XRController>{RightHand}/primaryButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PressA"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -2782,6 +2802,7 @@ public partial class @XRIDefaultInputActions: IInputActionCollection2, IDisposab
         m_XRIRightHandInteraction_TranslateAnchor = m_XRIRightHandInteraction.FindAction("Translate Anchor", throwIfNotFound: true);
         m_XRIRightHandInteraction_ScaleToggle = m_XRIRightHandInteraction.FindAction("Scale Toggle", throwIfNotFound: true);
         m_XRIRightHandInteraction_ScaleDelta = m_XRIRightHandInteraction.FindAction("Scale Delta", throwIfNotFound: true);
+        m_XRIRightHandInteraction_PressA = m_XRIRightHandInteraction.FindAction("PressA", throwIfNotFound: true);
         // XRI RightHand Locomotion
         m_XRIRightHandLocomotion = asset.FindActionMap("XRI RightHand Locomotion", throwIfNotFound: true);
         m_XRIRightHandLocomotion_TeleportSelect = m_XRIRightHandLocomotion.FindAction("Teleport Select", throwIfNotFound: true);
@@ -3507,6 +3528,7 @@ public partial class @XRIDefaultInputActions: IInputActionCollection2, IDisposab
     private readonly InputAction m_XRIRightHandInteraction_TranslateAnchor;
     private readonly InputAction m_XRIRightHandInteraction_ScaleToggle;
     private readonly InputAction m_XRIRightHandInteraction_ScaleDelta;
+    private readonly InputAction m_XRIRightHandInteraction_PressA;
     public struct XRIRightHandInteractionActions
     {
         private @XRIDefaultInputActions m_Wrapper;
@@ -3522,6 +3544,7 @@ public partial class @XRIDefaultInputActions: IInputActionCollection2, IDisposab
         public InputAction @TranslateAnchor => m_Wrapper.m_XRIRightHandInteraction_TranslateAnchor;
         public InputAction @ScaleToggle => m_Wrapper.m_XRIRightHandInteraction_ScaleToggle;
         public InputAction @ScaleDelta => m_Wrapper.m_XRIRightHandInteraction_ScaleDelta;
+        public InputAction @PressA => m_Wrapper.m_XRIRightHandInteraction_PressA;
         public InputActionMap Get() { return m_Wrapper.m_XRIRightHandInteraction; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -3564,6 +3587,9 @@ public partial class @XRIDefaultInputActions: IInputActionCollection2, IDisposab
             @ScaleDelta.started += instance.OnScaleDelta;
             @ScaleDelta.performed += instance.OnScaleDelta;
             @ScaleDelta.canceled += instance.OnScaleDelta;
+            @PressA.started += instance.OnPressA;
+            @PressA.performed += instance.OnPressA;
+            @PressA.canceled += instance.OnPressA;
         }
 
         private void UnregisterCallbacks(IXRIRightHandInteractionActions instance)
@@ -3601,6 +3627,9 @@ public partial class @XRIDefaultInputActions: IInputActionCollection2, IDisposab
             @ScaleDelta.started -= instance.OnScaleDelta;
             @ScaleDelta.performed -= instance.OnScaleDelta;
             @ScaleDelta.canceled -= instance.OnScaleDelta;
+            @PressA.started -= instance.OnPressA;
+            @PressA.performed -= instance.OnPressA;
+            @PressA.canceled -= instance.OnPressA;
         }
 
         public void RemoveCallbacks(IXRIRightHandInteractionActions instance)
@@ -4041,6 +4070,7 @@ public partial class @XRIDefaultInputActions: IInputActionCollection2, IDisposab
         void OnTranslateAnchor(InputAction.CallbackContext context);
         void OnScaleToggle(InputAction.CallbackContext context);
         void OnScaleDelta(InputAction.CallbackContext context);
+        void OnPressA(InputAction.CallbackContext context);
     }
     public interface IXRIRightHandLocomotionActions
     {
