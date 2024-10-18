@@ -89,6 +89,15 @@
       "dependencies": {},
       "url": "https://packages.unity.cn"
     },
+    "com.unity.pico.livepreview": {
+      "version": "file:F:/Unity Live Preview Plugin-1.0.3-20240902",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.unity.xr.management": "4.0.0",
+        "com.unity.xr.interaction.toolkit": "2.0.0"
+      }
+    },
     "com.unity.scriptablebuildpipeline": {
       "version": "1.21.23",
       "depth": 1,
@@ -156,7 +165,7 @@
       "url": "https://packages.unity.cn"
     },
     "com.unity.xr.core-utils": {
-      "version": "2.2.3",
+      "version": "2.3.0",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -213,6 +222,16 @@
         "com.unity.xr.core-utils": "2.1.1"
       },
       "url": "https://packages.unity.cn"
+    },
+    "com.unity.xr.picoxr": {
+      "version": "file:F:/PICO_SDK",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.unity.xr.management": "4.0.0",
+        "com.unity.xr.interaction.toolkit": "2.0.0",
+        "com.unity.xr.core-utils": "2.3.0"
+      }
     },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",

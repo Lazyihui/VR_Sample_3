@@ -1,0 +1,5 @@
+D:/VR_Sample_3/.utmp/RelWithDebInfo/315u5w1e/arm64-v8a/CMakeFiles/edit_cache.dir
+D:/VR_Sample_3/.utmp/RelWithDebInfo/315u5w1e/arm64-v8a/CMakeFiles/rebuild_cache.dir
+D:/VR_Sample_3/.utmp/RelWithDebInfo/315u5w1e/arm64-v8a/FramePacing/CMakeFiles/swappywrapper.dir
+D:/VR_Sample_3/.utmp/RelWithDebInfo/315u5w1e/arm64-v8a/FramePacing/CMakeFiles/edit_cache.dir
+D:/VR_Sample_3/.utmp/RelWithDebInfo/315u5w1e/arm64-v8a/FramePacing/CMakeFiles/rebuild_cache.dir

@@ -4,8 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/0Resource_Runtime/Game_Sence.unity
+    guid: bb4ec4f2bfc6aee4e880b32265aa102c
   m_configObjects:
+    Unity.XR.PICO.LivePreview.Settings: {fileID: 11400000, guid: 617c9063b19a9504e8323f7b6410470c, type: 2}
+    Unity.XR.PXR.Settings: {fileID: 11400000, guid: 7a0efa37c0a7a2d42b03f5c9f554aef3, type: 2}
     com.unity.addressableassets: {fileID: 11400000, guid: f58e52b6319d19945af6c73aff5b7cc7, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 8fb3ee30fcbcba6459538ac5e2596bc0, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: d0c854207ac191c479253a82a80a220e, type: 2}
